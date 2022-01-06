@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+main {
+  padding-top: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+main .lista-bots {
+  width: 90%;
+  margin: auto;
+}
+
+main .lista-bots h2 {
+  text-align: center;
+}
+
+main .lista-bots article {
+  width: 100%;
+  border-bottom: 3px solid red;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+main .lista-bots article .icon-circle {
+  color: #00b117;
+  position: absolute;
+  right: 0;
+}
+
+main .lista-bots article .img-content {
+  width: 100%;
+  overflow: hidden;
+}
+
+main .lista-bots article .img-content img {
+  width: 80%;
+  display: block;
+  margin: auto;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+main .lista-bots article .img-content img:hover {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+
+main .lista-bots article .bot-content {
+  text-align: center;
+}
+
+main .lista-bots article .bot-content p {
+  padding-bottom: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-weight: 600;
+}
+
+main .lista-bots article .bot-content p span {
+  font-weight: 400;
+}
+
+main .lista-bots article .bot-content .boton-administrar {
+  background: #009ee0;
+  display: block;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+}
+
+main .lista-bots article .bot-content .boton-administrar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (min-width: 720px) {
+  main .lista-bots {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .lista-bots h2 {
+    width: 100%;
+  }
+  main .lista-bots article {
+    width: 30%;
+    margin-bottom: 10px;
+    border: 0px solid #fff;
+  }
+}
+/*# sourceMappingURL=home.css.map */

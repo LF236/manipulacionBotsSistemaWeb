@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+//Declaración de variables
+$red: #d90000;
+$blue: #009ee0;
+$green: #00b117;
+$yellow: #ffd100;
+$dark: #000000;
+$gray: #d1d1d1;
+$grayStrong: #3e3e3e;
+$carouselHeight: 320px;
+$font-main: "Montserrat", sans-serif;
+$font-bold: "Montserrat", sans-serif;
+
+body {
+    //background-color: red;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    background-color: $dark;
+    font-family: $font-main;
+    position: relative;
+    user-select: none;
+    h1 {
+        color: #fff;
+        font-size: 1.5rem;
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .menu-icon-content {
+        width: 100%;
+        //background: red;
+        text-align: center;
+        span {
+            display: block;
+            color: #fff;
+            font-size: 2rem;
+            padding: 10px;
+            cursor: pointer;
+            &:hover {
+                transform: scale(0.9);
+            }
+        }
+    }
+    
+    nav {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        background-color: rgba($grayStrong, .8);
+        transition: all .5s;
+        transform: translateX(-100%);
+        z-index: 100;
+        &.openMenu {
+            transform: translateX(0);
+            
+        }
+        span {
+            display: block;
+            padding: 20px;
+            font-size: 1.4rem;
+            color: #fff;
+            transition: all .3s;
+            &:hover {
+                font-size: 1.3rem;
+            }
+        }
+
+        a {
+            width: 100%;
+            display: block;
+            padding: 20px;
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all .3s;
+            &:hover {
+                background: $dark;
+            }
+        }
+    }
+
+    @media (min-width: 720px) {
+        h1 {
+            text-align: start;
+            padding-left: 20px;
+        }
+
+        .menu-icon-content {
+            display: none;
+        }
+
+        nav {
+            transform: translateX(0);
+            position: relative;
+            height: auto;
+            background: $dark;
+            display: flex;
+            span {
+                display: none;
+            }
+            a {
+                width: auto;
+            }
+        }
+    }
+}
+
+

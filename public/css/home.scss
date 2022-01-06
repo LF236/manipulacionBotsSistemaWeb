@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+//Declaración de variables
+$red: #d90000;
+$blue: #009ee0;
+$green: #00b117;
+$yellow: #ffd100;
+$dark: #000000;
+$gray: #d1d1d1;
+$grayStrong: #3e3e3e;
+$carouselHeight: 320px;
+$font-main: "Montserrat", sans-serif;
+$font-bold: "Montserrat", sans-serif;
+
+main {
+    //background: purple;
+    padding-top: 20px;
+    font-family: $font-main;
+    .lista-bots {
+        width: 90%;
+        margin: auto;
+        h2 {
+            text-align: center;
+        }
+
+        article {
+            width: 100%;
+            border-bottom: 3px solid red;
+            padding: 10px;
+            overflow: hidden;
+            position: relative;
+            .icon-circle {
+                color: #00b117;
+                position: absolute;
+                right: 0;
+            }
+
+            .img-content {
+                width: 100%;
+                overflow: hidden;
+                img {
+                    width: 80%;
+                    display: block;
+                    margin: auto;
+                    
+                    transition: transform .5s;                
+                    &:hover {
+                        
+                        transform: rotate(20deg);
+                    }
+                }
+            }
+            
+
+            .bot-content {               
+                text-align: center;
+                p {
+                    padding-bottom: 5px;
+                    user-select: none;
+                    font-weight: 600;
+
+                    span {
+                        font-weight: 400;
+                    }
+                }
+
+                .boton-administrar {
+                    background: $blue;
+                    display: block;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 600;
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 720px) {        
+        .lista-bots {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            h2 {
+                width: 100%;
+            }
+            article {                
+                width: 30%;
+                margin-bottom: 10px;
+                border: 0px solid #fff;
+            }
+        }
+    }
+}
