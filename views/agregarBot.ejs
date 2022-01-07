@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Importamos el head -->
-    <%- include('./partials/head.ejs'); %>
-    <title>Login</title>
+    <%- include('./partials/head.ejs'); %> 
+    <title>Home</title>
     <link rel="stylesheet" href="/css/login.css">
 </head>
-
 <body>
-    <!-- Importamos el header exclusivo para el login -->
-    <%- include('./partials/headerLogin.ejs') %> 
+    <!-- Importamos el header -->
+    <%- include('./partials/header.ejs'); %> 
     <main>
-        <section class="imagen-login">
-            <img src="/img/bot-login.png" alt="">
-        </section>
         <section class="fomulario-login">
             <form>
-                <h2>Login</h2>
-                <label for="email">Correo</label>
-                <input type="email" placeholder="Correo Electrónico" name="email"/>
+                <h2>Registro nuevo Bot</h2>
+                <label for="name">Nombre del bot</label>
+                <input type="text" placeholder="Nombre del bot" name="name" id="name"/>
+
+                <label for="host">Hostname</label>
+                <input type="text" placeholder="Hostname" name="host" id="host"/>
+
+                <label for="ip">Dirección IP</label>
+                <input type="text" placeholder="Dirección IP" name="ip" id="ip"/>
 
                 <label for="password">Contraseña</label>
                 <input type="password" name="password" id="password" placeholder="Password">
+
                 <div class="buttons">
                     <label for="btn-send" class="btn-send">Enviar</label>
                     <button type="submit" id="btn-send"></button>
                 </div>
             </form>
+
+            
         </section>
     </main>
     <!-- Importamos el footer -->
     <%- include('./partials/footer.ejs') %> 
 </body>
-
 </html>

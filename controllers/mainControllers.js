@@ -10,6 +10,10 @@ const mainControllers = {
 
     infoBot: (req, res) => {
         res.render('infoBot');
+    },
+
+    test: (req, res) => {
+        res.render('login');
     }
 };
 

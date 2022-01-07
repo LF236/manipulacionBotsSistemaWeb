@@ -4,12 +4,68 @@
     <!-- Importamos el head -->
     <%- include('./partials/head.ejs'); %> 
     <title>Información Bot</title>
+    <link rel="stylesheet" href="/css/info-bot.css">
 </head>
 <body>
     <!-- Importamos el header -->
     <%- include('./partials/header.ejs'); %> 
     <main>
-
+        <section class="info-bot">
+            <article class="info-bot-content">
+                <div class="info-bot-content-left">
+                    <h2>HostName</h2>
+                    <img src="/img/bots/1.jpg" alt="bot_imagen">
+                    <p>Direccion IP</p>
+                    <div class="info-bot-content-buttons">
+                        <span class="editar">Editar</span>
+                        <span class="eliminar">Eliminar</span>
+                    </div>
+                </div>
+                
+                <div class="info-bot-content-right">
+                    <div class="servicios-activos">
+                        <p>Servicios Activos</p>
+                        <div class="servicio-content">
+                            <span>SHH</span>
+                            <span class="button-off">Apagar</span>
+                        </div>
+    
+                        <div class="servicio-content">
+                            <span>APACHE</span>
+                            <span class="button-off">Apagar</span>
+                        </div>
+    
+                        <div class="servicio-content">
+                            <span>MYSQL</span>
+                            <span class="button-off">Apagar</span>
+                        </div>
+    
+                        <div class="servicio-content">
+                            <span>POSTGRESSQL</span>
+                            <span class="button-off">Apagar</span>
+                        </div>
+                    </div>
+    
+                    <div class="servicios-apagados">
+                        <p>Servicios Apagados</p>
+                        <div class="servicio-content">
+                            <span>Docker</span>
+                            <span class="button-on">Encender</span>
+                        </div>
+    
+                        <div class="servicio-content">
+                            <span>Maria DB</span>
+                            <span class="button-on">Encender</span>
+                        </div>
+                    </div>
+    
+                    <div class="agregar-nuevo-servicio-content">
+                        <span>Agregar Nuevo Servicio</span>
+                    </div>
+                </div>
+                
+            </article>
+        </section>
     </main>
     <!-- Importamos el footer -->
     <%- include('./partials/footer.ejs') %> 

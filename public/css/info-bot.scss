@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+//Declaración de variables
+$red: #d90000;
+$blue: #009ee0;
+$green: #00b117;
+$yellow: #ffd100;
+$dark: #000000;
+$gray: #d1d1d1;
+$grayStrong: #3e3e3e;
+$carouselHeight: 320px;
+$font-main: "Montserrat", sans-serif;
+$font-bold: "Montserrat", sans-serif;
+
+.info-bot {
+    width: 90%;
+    margin: auto;
+    padding-top: 30px;
+    .info-bot-content {
+        width: 100%;
+        h2, p {
+            width: 100%;
+            background-color: $blue;
+            color: #fff;
+            font-family: $font-main;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .info-bot-content-buttons {
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            span {
+                display: block;
+                padding: 10px;
+                cursor: pointer;
+                text-align: center;
+                font-family: $font-main;
+                color: #fff;
+                font-weight: 600;
+                transition: all .2s;
+                border-radius: 10px;
+                &:hover {
+                    color: #222;
+                }
+            }
+
+            .editar {
+                background-color: $yellow;
+            }
+
+            .eliminar {
+                background-color: $red;
+            }
+        }
+
+        .servicios-activos {
+            margin-top: 50px;
+            p {
+                background-color: $green;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .servicio-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px;
+                padding-bottom: 5px;
+                
+                font-family: $font-main;
+                .button-off {
+                    padding: 5px;
+                    border-radius: 5px;
+                    background-color: $red;
+                    user-select: none;
+                    cursor: pointer;
+                    color: #fff;
+                    transition: all .2s;
+                    &:hover {
+                        color: #222;
+                    }
+                }
+            }
+        }
+
+        .servicios-apagados {
+            margin-top: 50px;
+            p {
+                background-color: $red;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .servicio-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px;
+                padding-bottom: 5px;
+                
+                font-family: $font-main;
+                .button-on {
+                    padding: 5px;
+                    border-radius: 5px;
+                    background-color: $green;
+                    user-select: none;
+                    cursor: pointer;
+                    color: #fff;
+                    transition: all .2s;
+                    &:hover {
+                        color: #222;
+                    }
+                }
+            }
+        }
+
+        .agregar-nuevo-servicio-content {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+
+            span {
+                display: block;
+                padding: 10px;
+                color: #fff;
+                font-weight: 600;
+                font-family: $font-main;
+                background-color: $blue;
+                border: 2px solid transparent;
+                cursor: pointer;
+                user-select: none;
+                border-radius: 10px;
+                transition: all .2s;
+                &:hover {
+                    border: 2px solid #222;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 720px) {
+    .info-bot {
+        .info-bot-content {
+            display: flex;
+            justify-content: space-between;
+            .info-bot-content-left {
+                width: 30%;
+            }
+
+            .info-bot-content-right {
+                width: 30%;
+                margin-top: 0;
+                .servicios-activos {
+                    margin-top: 0;
+                }
+            }
+
+            
+        }
+    }
+}

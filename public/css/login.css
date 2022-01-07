@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+main .imagen-login {
+  display: none;
+}
+
+main .fomulario-login {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+main .fomulario-login form {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+main .fomulario-login form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+main .fomulario-login form label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+main .fomulario-login form input[type="text"], main .fomulario-login form input[type="email"] {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 1px solid #3e3e3e;
+  margin-bottom: 30px;
+}
+
+main .fomulario-login form input[type="text"]:focus, main .fomulario-login form input[type="email"]:focus {
+  outline: none;
+  border-bottom: #009ee0 solid 2px;
+}
+
+main .fomulario-login form input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 1px solid #3e3e3e;
+  margin-bottom: 30px;
+}
+
+main .fomulario-login form input[type="password"]:focus {
+  outline: none;
+  border-bottom: #009ee0 solid 2px;
+}
+
+main .fomulario-login form .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+main .fomulario-login form .buttons .btn-send {
+  display: inline-block;
+  background-color: #3e3e3e;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  margin-top: 10px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+main .fomulario-login form .buttons .btn-send:hover {
+  background-color: #d90000;
+}
+
+main .fomulario-login form .buttons button[type="submit"] {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  main .imagen-login {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main .imagen-login img {
+    width: 50%;
+    margin: auto;
+  }
+  main .fomulario-login {
+    width: 50%;
+  }
+}
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+.info-bot {
+  width: 90%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.info-bot .info-bot-content {
+  width: 100%;
+}
+
+.info-bot .info-bot-content h2, .info-bot .info-bot-content p {
+  width: 100%;
+  background-color: #009ee0;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.info-bot .info-bot-content img {
+  width: 100%;
+  display: block;
+}
+
+.info-bot .info-bot-content .info-bot-content-buttons {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+}
+
+.info-bot .info-bot-content .info-bot-content-buttons span {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  border-radius: 10px;
+}
+
+.info-bot .info-bot-content .info-bot-content-buttons span:hover {
+  color: #222;
+}
+
+.info-bot .info-bot-content .info-bot-content-buttons .editar {
+  background-color: #ffd100;
+}
+
+.info-bot .info-bot-content .info-bot-content-buttons .eliminar {
+  background-color: #d90000;
+}
+
+.info-bot .info-bot-content .servicios-activos {
+  margin-top: 50px;
+}
+
+.info-bot .info-bot-content .servicios-activos p {
+  background-color: #00b117;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.info-bot .info-bot-content .servicios-activos .servicio-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  padding-bottom: 5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.info-bot .info-bot-content .servicios-activos .servicio-content .button-off {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #d90000;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  color: #fff;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.info-bot .info-bot-content .servicios-activos .servicio-content .button-off:hover {
+  color: #222;
+}
+
+.info-bot .info-bot-content .servicios-apagados {
+  margin-top: 50px;
+}
+
+.info-bot .info-bot-content .servicios-apagados p {
+  background-color: #d90000;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.info-bot .info-bot-content .servicios-apagados .servicio-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  padding-bottom: 5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.info-bot .info-bot-content .servicios-apagados .servicio-content .button-on {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #00b117;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  color: #fff;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.info-bot .info-bot-content .servicios-apagados .servicio-content .button-on:hover {
+  color: #222;
+}
+
+.info-bot .info-bot-content .agregar-nuevo-servicio-content {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.info-bot .info-bot-content .agregar-nuevo-servicio-content span {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  background-color: #009ee0;
+  border: 2px solid transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 10px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.info-bot .info-bot-content .agregar-nuevo-servicio-content span:hover {
+  border: 2px solid #222;
+}
+
+@media (min-width: 720px) {
+  .info-bot .info-bot-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .info-bot .info-bot-content .info-bot-content-left {
+    width: 30%;
+  }
+  .info-bot .info-bot-content .info-bot-content-right {
+    width: 30%;
+    margin-top: 0;
+  }
+  .info-bot .info-bot-content .info-bot-content-right .servicios-activos {
+    margin-top: 0;
+  }
+}
+/*# sourceMappingURL=info-bot.css.map */

@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.formulario-registros {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  padding-top: 110px;
+}
+
+@media (max-width: 769px) {
+  .formulario-registros {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+}
+
+.formulario-registros h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007bdf;
+}
+
+.formulario-registros form {
+  margin: auto;
+  width: 90%;
+}
+
+.formulario-registros form label,
+.formulario-registros form pre {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formulario-registros form label span,
+.formulario-registros form pre span {
+  color: #006dc6;
+}
+
+.formulario-registros form pre {
+  font-family: "Roboto", sans-serif;
+}
+
+.formulario-registros form textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.formulario-registros form select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.formulario-registros form .select {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  margin-bottom: 20px;
+}
+
+.formulario-registros form .text-area {
+  height: 150px;
+  background: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.formulario-registros form .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.formulario-registros form .buttons span {
+  color: #fff;
+}
+
+.formulario-registros form .buttons .cantidadImagenes {
+  padding-top: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.formulario-registros form .buttons .btn-file {
+  display: inline-block;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  background: #ff3c32;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.formulario-registros form .buttons .btn-file:hover {
+  background-color: #ff2419;
+  border: 2px solid black;
+}
+
+.formulario-registros form .buttons .btn-close {
+  display: inline-block;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  background: #ff2419;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.formulario-registros form .buttons .btn-close:hover {
+  background-color: #ff2419;
+  border: 2px solid #fff;
+}
+
+.formulario-registros form .buttons .btn-send {
+  display: inline-block;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  background-color: #007bdf;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.formulario-registros form .buttons .btn-send:hover {
+  background-color: #006dc6;
+}
+
+.formulario-asignar-turnar {
+  padding-top: 110px;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.formulario-asignar-turnar .empleado_asignado {
+  color: #007bdf;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.formulario-asignar-turnar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007bdf;
+}
+
+.formulario-asignar-turnar form {
+  margin: auto;
+  width: 90%;
+}
+
+.formulario-asignar-turnar form label,
+.formulario-asignar-turnar form pre {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formulario-asignar-turnar form label span,
+.formulario-asignar-turnar form pre span {
+  color: #006dc6;
+}
+
+.formulario-asignar-turnar form pre {
+  font-family: "Roboto", sans-serif;
+}
+
+.formulario-asignar-turnar form textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.formulario-asignar-turnar form .select {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  margin-left: 0;
+}
+
+.formulario-asignar-turnar form .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.formulario-asignar-turnar form .buttons .btn-send {
+  display: inline-block;
+  background-color: #007bdf;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  margin-top: 10px;
+}
+
+.formulario-registrar-obersaviones {
+  padding-top: 110px;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.formulario-registrar-obersaviones h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007bdf;
+}
+
+.formulario-registrar-obersaviones form {
+  margin: auto;
+  width: 90%;
+}
+
+.formulario-registrar-obersaviones form label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formulario-registrar-obersaviones form textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.formulario-registrar-obersaviones form select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.formulario-registrar-obersaviones form .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.formulario-registrar-obersaviones form .buttons .btn-send {
+  display: inline-block;
+  background-color: #007bdf;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  margin-top: 10px;
+}
+
+.formulario-eliminar-cancelar {
+  padding-top: 110px;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.formulario-eliminar-cancelar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007bdf;
+}
+
+.formulario-eliminar-cancelar form {
+  margin: auto;
+  width: 90%;
+}
+
+.formulario-eliminar-cancelar form label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formulario-eliminar-cancelar form textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.formulario-eliminar-cancelar form select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.formulario-eliminar-cancelar form .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.formulario-eliminar-cancelar form .buttons .btn-send {
+  display: inline-block;
+  background-color: #007bdf;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  margin-top: 10px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+button[type="submit"] {
+  display: none;
+}
+/*# sourceMappingURL=form.css.map */
