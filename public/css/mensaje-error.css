@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+.mensaje-error {
+  width: 90%;
+  margin: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.mensaje-error .mensaje-error-img {
+  width: 100%;
+}
+
+.mensaje-error .mensaje-error-img img {
+  width: 100%;
+  display: block;
+}
+
+.mensaje-error p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mensaje-error h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mensaje-error a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+}
+
+.mensaje-error a span {
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  background-color: #009ee0;
+  padding: 10px;
+  display: block;
+  border-radius: 10px;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.mensaje-error a span:hover {
+  color: #222;
+}
+
+@media (min-width: 720px) {
+  .mensaje-error .mensaje-error-img {
+    width: 50%;
+    margin: auto;
+  }
+}
+/*# sourceMappingURL=mensaje-error.css.map */

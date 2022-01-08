@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Importamos el head -->
+    <%- include('./partials/head.ejs'); %>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/mensaje-error.css">
+</head>
+
+<body>
+    <!-- Importamos el header exclusivo para el login -->
+    <%- include('./partials/headerLogin.ejs') %> 
+    <main>
+        <section class="mensaje-error">
+            <h3>ERROR</h3>
+            <div class="mensaje-error-img">
+                <img src="/img/null-bot.gif" alt="">
+            </div>
+            <p>¡¡¡No tienes los permisos suficientes para entar aqui!!!</p>
+            <a href="/"><span>Ir al login</span></a>
+        </section>
+    </main>
+    <!-- Importamos el footer -->
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

@@ -29,13 +29,16 @@ main {
                 color: $dark;
             }
 
-            h4 {
+            h4, .mensaje-error-backend {
                 color: $red;
                 text-align: center;
                 display: none;
                 padding-bottom: 10px;
             }
 
+            .mensaje-error-backend {
+                display: block;
+            }
             label {
                 font-weight: 700;
                 font-size: 1.2rem;

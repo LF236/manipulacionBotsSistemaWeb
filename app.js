@@ -2,10 +2,14 @@ require('colors');
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
+const session = require('express-session');
 const app = express();
 
 const puerto = process.env.PUERTO_SERVIDOR;
-console.log(puerto);
+//console.log(puerto);
+
+// Configuración para sesiones
+app.use(session({ secret: 'sistema-bots' }));
 
 // Configuración del directorio publico
 const public_path = path.resolve(__dirname + '/public');
