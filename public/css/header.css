@@ -21,6 +21,18 @@ header h1 {
   text-align: center;
 }
 
+header .mensaje-bienvendida {
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
 header .menu-icon-content {
   width: 100%;
   text-align: center;

@@ -1,6 +1,16 @@
+const db = require('../database/models');
+
 const mainControllers = {
     index: (req, res) => {
         console.log(req);
+        res.send('Hola');
+    },
+
+    showLogin: (req, res) => {
+        res.render('login');
+    },
+
+    processLogin: (req, res) => {
         res.send('Hola');
     },
 
@@ -12,8 +22,11 @@ const mainControllers = {
         res.render('infoBot');
     },
 
-    test: (req, res) => {
-        res.render('login');
+    test: async (req, res) => {
+        const data = await db.Usuario.findAll({
+            raw: true
+        })
+        res.send(data);
     }
 };
 

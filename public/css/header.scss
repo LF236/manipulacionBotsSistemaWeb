@@ -29,6 +29,18 @@ header {
         text-align: center;
     }
 
+    .mensaje-bienvendida {
+        color: #fff;
+        font-size: 1.5rem;
+        font-family: $font-main;
+        font-weight: 600;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-top: 10px;
+        padding-right: 10px;
+    }
+
     .menu-icon-content {
         width: 100%;
         //background: red;
