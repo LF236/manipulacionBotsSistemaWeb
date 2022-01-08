@@ -22,15 +22,13 @@ header h1 {
 }
 
 header .mensaje-bienvendida {
+  position: relative;
   color: #fff;
-  font-size: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-top: 10px;
-  padding-right: 10px;
+  padding: 10px 0;
 }
 
 header .menu-icon-content {
@@ -57,8 +55,8 @@ header nav {
   position: absolute;
   top: 0;
   background-color: rgba(62, 62, 62, 0.8);
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   z-index: 100;
@@ -74,8 +72,8 @@ header nav span {
   padding: 20px;
   font-size: 1.4rem;
   color: #fff;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 header nav span:hover {
@@ -89,8 +87,8 @@ header nav a {
   color: #fff;
   font-weight: 600;
   text-decoration: none;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 header nav a:hover {
@@ -101,6 +99,18 @@ header nav a:hover {
   header h1 {
     text-align: start;
     padding-left: 20px;
+  }
+  header .mensaje-bienvendida {
+    display: block;
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 10px;
+    padding-right: 10px;
   }
   header .menu-icon-content {
     display: none;

@@ -10,7 +10,19 @@ const mainControllers = {
         res.render('login');
     },
 
-    processLogin: (req, res) => {
+    processLogin: async (req, res) => {
+        const { user, password } = req.body;
+        
+        // Buscamos la información del usuario en base al campo user
+        const data = await db.Usuario.findAll({
+            where: {
+                usuario: user
+            },
+            raw: true
+        });
+        console.log(data);
+        console.log(user);
+        console.log(password);
         res.send('Hola');
     },
 

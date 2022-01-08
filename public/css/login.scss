@@ -29,6 +29,13 @@ main {
                 color: $dark;
             }
 
+            h4 {
+                color: $red;
+                text-align: center;
+                display: none;
+                padding-bottom: 10px;
+            }
+
             label {
                 font-weight: 700;
                 font-size: 1.2rem;
