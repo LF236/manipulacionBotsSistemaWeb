@@ -11,7 +11,7 @@ const mainControllers = {
 
     showLogin: (req, res) => {
         // Si hay una sesion activa, el login no debe ser mostrado
-        if(req.session.tokenSesion){
+        if (req.session.tokenSesion) {
             return res.redirect('/home');
         }
         // Si no hay sesion el acceso al login se permite
@@ -115,13 +115,88 @@ const mainControllers = {
         });
     },
 
-    infoBot: (req, res) => {
-        res.render('infoBot');
+    infoBot: async (req, res) => {
+        /* 
+            Verificamos si hay un token de sesion configurado, si no lo hay entonces mandamos un mensaje de error
+            de privilegios
+        */
+        if (!req.session.tokenSesion) {
+            return res.render('error', {
+                "msg": '¡¡¡No tienes los permisos suficientes para entar aqui!!!',
+                "msgEnlace": "Ir al Login",
+                "uri": "/"
+            })
+        }
+
+        // Si hay una sesión activa buscamos los datos del usuario a través del token en la table SesionUsario
+        const infoSesion = await db.SesionUsuario.findAll({
+            where: {
+                token: req.session.tokenSesion
+            },
+            raw: true
+        });
+        // Obtenemos el id del usuario que se relaciona con el token de la sesion
+        let idUsuarioPertenecienteSesion = infoSesion[0].id_usuario;
+        // Buscamos la informacion del usuario a partir de su ID
+        let infoUsuario = await db.Usuario.findByPk(idUsuarioPertenecienteSesion, {
+            raw: true
+        });
+
+        return res.render('infoBot', {
+            nombreUsuario: infoUsuario.nombre
+        });
     },
 
-    addBot: (req, res) => {
-        res.render('agregarBot', {
+    addBot: async (req, res) => {
+        /* 
+            Verificamos si hay un token de sesion configurado, si no lo hay entonces mandamos un mensaje de error
+            de privilegios
+        */
+        if (!req.session.tokenSesion) {
+            return res.render('error', {
+                "msg": '¡¡¡No tienes los permisos suficientes para entar aqui!!!',
+                "msgEnlace": "Ir al Login",
+                "uri": "/"
+            })
+        }
+
+        // Si hay una sesión activa buscamos los datos del usuario a través del token en la table SesionUsario
+        const infoSesion = await db.SesionUsuario.findAll({
+            where: {
+                token: req.session.tokenSesion
+            },
+            raw: true
+        });
+        // Obtenemos el id del usuario que se relaciona con el token de la sesion
+        let idUsuarioPertenecienteSesion = infoSesion[0].id_usuario;
+        // Buscamos la informacion del usuario a partir de su ID
+        let infoUsuario = await db.Usuario.findByPk(idUsuarioPertenecienteSesion, {
+            raw: true
+        });
+
+        return res.render('agregarBot', {
+            nombreUsuario: infoUsuario.nombre,
+            "primerError": null,
+            "old": null
+        });
+    },
+
+    agregarBot: (req, res) => {
+        console.log(req.body);
+        let errors = validationResult(req);
+        // Verificamos si no hay errores en express-validator
+        if (errors.isEmpty()) {
+            // Si no los hay, registramos el BOT en la DB
+
+            // Redireccionamos a la vista con la información del BOT
+            return res.redirect(`/infoBot/${req.name}`);
+        }
+        // Si hay errores, renderizamos la vista del formualario de agregar BOT con su error
+        const primerError = errors.mapped()[`${Object.entries(errors.mapped())[0][0]}`];
+        return res.render('agregarBot', {
             nombreUsuario: "hehe",
+            "primerError": primerError,
+            "old": req.body
         })
     },
 
