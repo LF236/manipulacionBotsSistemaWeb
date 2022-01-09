@@ -9,8 +9,20 @@ main .lista-bots {
   margin: auto;
 }
 
-main .lista-bots h2 {
+main .lista-bots h2, main .lista-bots .no-bot {
   text-align: center;
+}
+
+main .lista-bots .no-bot {
+  color: #d90000;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  display: block;
+}
+
+main .lista-bots .enlace-no-bot {
+  margin-top: 10px;
 }
 
 main .lista-bots article {

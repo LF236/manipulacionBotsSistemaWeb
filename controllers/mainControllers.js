@@ -10,7 +10,12 @@ const mainControllers = {
     },
 
     showLogin: (req, res) => {
-        res.render('login', {
+        // Si hay una sesion activa, el login no debe ser mostrado
+        if(req.session.tokenSesion){
+            return res.redirect('/home');
+        }
+        // Si no hay sesion el acceso al login se permite
+        return res.render('login', {
             "primerError": null,
             "old": null
         });
@@ -31,7 +36,7 @@ const mainControllers = {
             });
 
             // Si data es igual a un arreglo vacio, quiere decir que el usuario no existe
-            if(data.length == 0) {
+            if (data.length == 0) {
                 return res.render('login', {
                     "primerError": {
                         msg: "El usuario no existe"
@@ -41,7 +46,7 @@ const mainControllers = {
             }
 
             // Verificamos si la contraseña es la misma, si no mandar mensaje de ERROR
-            if(!bcryptjs.compareSync(password, data[0].password)) {
+            if (!bcryptjs.compareSync(password, data[0].password)) {
                 return res.render('login', {
                     "primerError": {
                         msg: "Contraseña Incorrecta"
@@ -51,11 +56,16 @@ const mainControllers = {
             }
 
             // Si se cumplen todas las condiciones iniciamos sesion
+            let tokenRandom = new tokenGenerator().generate()
+            let userID = data[0].id;
             // Le asignamos un token a la sesión
-            req.session.tokenSesion = new tokenGenerator().generate();
-            console.log(data);
-            console.log(user);
-            console.log(password);
+            req.session.tokenSesion = tokenRandom;
+            // Guardamos la informacion de la sesion en la DB
+            await db.SesionUsuario.create({
+                id_usuario: userID,
+                token: tokenRandom
+            });
+            console.log(userID);
             return res.redirect('/home');
         }
         const primerError = errors.mapped()[`${Object.entries(errors.mapped())[0][0]}`];
@@ -66,8 +76,43 @@ const mainControllers = {
 
     },
 
-    home: (req, res) => {
-        res.render('home');
+    home: async (req, res) => {
+        /* 
+            Verificamos si hay un token de sesion configurado, si no lo hay entonces mandamos un mensaje de error
+            de privilegios
+        */
+        if (!req.session.tokenSesion) {
+            return res.render('error', {
+                "msg": '¡¡¡No tienes los permisos suficientes para entar aqui!!!',
+                "msgEnlace": "Ir al Login",
+                "uri": "/"
+            })
+        }
+        console.log(req.session.tokenSesion);
+        // Si hay una sesión activa buscamos los datos del usuario a través del token en la table SesionUsario
+        const infoSesion = await db.SesionUsuario.findAll({
+            where: {
+                token: req.session.tokenSesion
+            },
+            raw: true
+        });
+        // Obtenemos el id del usuario que se relaciona con el token de la sesion
+        let idUsuarioPertenecienteSesion = infoSesion[0].id_usuario;
+        // Buscamos la informacion del usuario a partir de su ID
+        let infoUsuario = await db.Usuario.findByPk(idUsuarioPertenecienteSesion, {
+            raw: true
+        });
+
+        // Obtenemos la informacion de todos los bots para que sea impresos en la vista
+        let botsInfo = await db.Bot.findAll({
+            raw: true
+        });
+
+        console.log(botsInfo);
+        return res.render('home', {
+            nombreUsuario: infoUsuario.nombre,
+            listaBots: botsInfo
+        });
     },
 
     infoBot: (req, res) => {

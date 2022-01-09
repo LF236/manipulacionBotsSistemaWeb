@@ -19,12 +19,22 @@ app.use(express.static(public_path));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+
 // Configuración del archivos de rutas
 const mainRoutes = require('./routes/mainRoutes');
 app.use('/', mainRoutes);
 
 // Establecemos el motor de vistas que vamos a utilizar en el proyecto
 app.set('view engine', 'ejs');
+
+// Middleware global para solucionar un error 404
+app.use(function (req, res, next) {
+    res.status(404).render('error', {
+        "msg": '¡¡¡Recurso no encontrado!!!',
+        "msgEnlace": "Ir al Home",
+        "uri": "/home"
+    });
+});
 
 // Ponemos a escuchar el servidor
 app.listen(puerto, () => {

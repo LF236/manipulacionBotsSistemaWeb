@@ -18,8 +18,20 @@ main {
     .lista-bots {
         width: 90%;
         margin: auto;
-        h2 {
+        h2, .no-bot {
             text-align: center;
+        }
+
+        .no-bot  {
+            color: $red;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            display: block;
+        }
+
+        .enlace-no-bot {
+            margin-top: 10px;
         }
 
         article {
