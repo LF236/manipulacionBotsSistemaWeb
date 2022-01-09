@@ -119,6 +119,12 @@ const mainControllers = {
         res.render('infoBot');
     },
 
+    addBot: (req, res) => {
+        res.render('agregarBot', {
+            nombreUsuario: "hehe",
+        })
+    },
+
     test: async (req, res) => {
         res.render('error');
     }

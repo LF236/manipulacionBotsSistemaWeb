@@ -3,7 +3,7 @@
 <head>
     <!-- Importamos el head -->
     <%- include('./partials/head.ejs'); %> 
-    <title>Home</title>
+    <title>Agregar Bot</title>
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
@@ -13,6 +13,7 @@
         <section class="fomulario-login">
             <form>
                 <h2>Registro nuevo Bot</h2>
+                <h4 class="mensaje-error">Hola</h4>
                 <label for="name">Nombre del bot</label>
                 <input type="text" placeholder="Nombre del bot" name="name" id="name"/>
 
@@ -31,10 +32,13 @@
                 </div>
             </form>
 
-            
+            <div class="formulario-login-img">
+                <img src="/img/bot-reg.png" alt="">
+            </div>
         </section>
     </main>
     <!-- Importamos el footer -->
-    <%- include('./partials/footer.ejs') %> 
+    <%- include('./partials/footer.ejs') %>
+    <script src="/js/procesarRegistroBot.js"></script>
 </body>
 </html>

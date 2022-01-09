@@ -8,6 +8,7 @@ router.get('/home', mainControllers.home);
 router.get('/', mainControllers.showLogin);
 router.post('/', validarLogin ,mainControllers.processLogin);
 
+router.get('/agregarBot', mainControllers.addBot);
 router.get('/infoBot/:idBot', mainControllers.infoBot);
 router.get('/test', mainControllers.test);
 module.exports = router;
