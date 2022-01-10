@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { validarLogin } = require('../helpers/validarLogin');
 const validarRegistroBot = require('../helpers/validarRegistroBot');
+const validarActualizarBot = require('../helpers/validarActualizarBot');
 const mainControllers = require('../controllers/mainControllers');
 
 router.get('/home', mainControllers.home);
@@ -13,7 +14,7 @@ router.get('/agregarBot', mainControllers.addBot);
 router.post('/agregarBot', validarRegistroBot ,mainControllers.agregarBot);
 
 router.get('/editarBot/:nombreBot/:host', mainControllers.editarBot);
-router.post('/editarBot/:nombreBot/:host/:ip', validarRegistroBot ,mainControllers.editarBotPost);
+router.post('/editarBot/:nombreBot/:host/:ip', validarActualizarBot ,mainControllers.editarBotPost);
 router.get('/eliminarBot', mainControllers.eliminarBot);
 
 router.get('/infoBot/:nombreBot/:host', mainControllers.infoBot);

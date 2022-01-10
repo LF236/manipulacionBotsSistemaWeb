@@ -5,6 +5,7 @@ const ip = require('ip');
 const axios = require('axios');
 const mainControllers = {
     home: (req, res) => {
+        console.log(req);
         res.send('Hola');
     },
 

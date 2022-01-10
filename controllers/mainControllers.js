@@ -296,7 +296,10 @@ const mainControllers = {
 
     editarBotPost: async (req, res) => {
         let errors = validationResult(req);
+        console.log(errors);
+        console.log('HOLA')
         if (errors.isEmpty()) {
+            console.log('OK');
             const { nombreBot, host, ip } = req.params;
             let botActual = await db.Bot.findAll({
                 where: {
@@ -310,9 +313,9 @@ const mainControllers = {
             let idBotActual = botActual[0].id;
             await db.Bot.update(
                 {
-                    hostname: req.body.host,
-                    direccionIP: req.body.ip,
-                    nombreBot: req.body.name,
+                    hostname: req.body.hostname,
+                    direccionIP: req.body.direccionIP,
+                    nombreBot: req.body.nombreBot,
                     password: bcryptjs.hashSync(req.body.password, 12)
                 },
                 {
@@ -320,7 +323,7 @@ const mainControllers = {
                 }
             );
 
-            return res.redirect(`/infoBot/${req.body.name}/${req.body.host}`);
+            return res.redirect(`/infoBot/${req.body.nombreBot}/${req.body.hostname}`);
         }
 
         // Si hay una sesión activa buscamos los datos del usuario a través del token en la table SesionUsario
@@ -338,11 +341,12 @@ const mainControllers = {
         });
         // Si hay errores, renderizamos la vista del formualario de agregar BOT con su error
         const primerError = errors.mapped()[`${Object.entries(errors.mapped())[0][0]}`];
+        console.log(req.body);
         return res.render('editarBot', {
             nombreUsuario: infoUsuario.nombre,
             "primerError": primerError,
             "old": req.body,
-            infoBot: req.body
+            "infoBot": req.body
         })
 
     },
