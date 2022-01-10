@@ -15,8 +15,8 @@ window.addEventListener('load', () => {
 
         const spiner = document.querySelector('#spinner');
         spiner.style.display = 'flex';
-        console.log(`http://${direccionIp.trim()}/buscarComando?comando=${servicio.trim()}`);
-        axios.get(`http://${direccionIp.trim()}:5000/buscarComando?comando=${servicio}`)
+        console.log(`https://${direccionIp.trim()}:5000/buscarComando?comando=${servicio.trim()}`);
+        axios.get(`https://${direccionIp.trim()}:5000/buscarComando?comando=${servicio}`)
             .then(elServicioExiste => {                
                 // Quitamos el Spinner
                 spiner.style.display = 'none';

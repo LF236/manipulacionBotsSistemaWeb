@@ -5,6 +5,8 @@ const path = require('path');
 const cors = require('cors');
 const express = require('express');
 const app = express();
+const https = require('https');
+const fs = require('fs');
 
 const puerto = 5000;
 //console.log(puerto);
@@ -17,7 +19,10 @@ app.use(express.static(public_path));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-
+const httpsOptions = {
+    key: fs.readFileSync('./key.pem'),
+    cert: fs.readFileSync('./cert.pem')
+}
 // Configuración del archivos de rutas
 const mainRoutes = require('./routes/mainRoutes');
 app.use(cors());
@@ -25,6 +30,6 @@ app.use('/', mainRoutes);
 
 
 // Ponemos a escuchar el servidor
-app.listen(puerto, () => {
+https.createServer(httpsOptions, app).listen(puerto, () => {
     console.log(`El servidor esta listo en http://localhost:${puerto}`.rainbow);
 });
