@@ -13,55 +13,46 @@
         <section class="info-bot">
             <article class="info-bot-content">
                 <div class="info-bot-content-left">
-                    <h2>HostName</h2>
+                    <h2 id="hostname"><%= infoBot.hostname %> </h2>
                     <img src="/img/bots/1.jpg" alt="bot_imagen">
-                    <p>Direccion IP</p>
+                    <p id="bot-id"><%= infoBot.direccionIP %> </p>
                     <div class="info-bot-content-buttons">
-                        <span class="editar">Editar</span>
-                        <span class="eliminar">Eliminar</span>
+                        <span class="editar"><a href=<%= `/editarBot/${infoBot.nombreBot}/${infoBot.hostname}` %> >Editar</a></span>
+                        <span class="eliminar"><a href=<%= `/eliminarBot?hostname=${infoBot.hostname}&ip=${infoBot.direccionIP}` %> >Eliminar</a></span>
                     </div>
                 </div>
                 
                 <div class="info-bot-content-right">
                     <div class="servicios-activos">
-                        <p>Servicios Activos</p>
-                        <div class="servicio-content">
-                            <span>SHH</span>
-                            <span class="button-off">Apagar</span>
-                        </div>
-    
-                        <div class="servicio-content">
-                            <span>APACHE</span>
-                            <span class="button-off">Apagar</span>
-                        </div>
-    
-                        <div class="servicio-content">
-                            <span>MYSQL</span>
-                            <span class="button-off">Apagar</span>
-                        </div>
-    
-                        <div class="servicio-content">
-                            <span>POSTGRESSQL</span>
-                            <span class="button-off">Apagar</span>
-                        </div>
+                        <p>Lista de Servicios</p>
+                        <% servicios.forEach(servicio => { %> 
+                            <div class="servicio-content">
+                                <span><%= servicio.nombre %></span>
+                                                                                        
+                                <% if(servicio.estado == 0) { %> 
+                                    <span class="button-on" id="<%= servicio.nombre %>">Apagar</span>
+                                <% } %> 
+                                <% if(servicio.estado == 1) { %> 
+                                    <span class="button-off" id="<%= servicio.nombre %>">Encender</span>
+                                <% } %> 
+                            </div>
+                        <% }) %>
+                        <p class="mensaje-encender-apagar">fsdfs</p>                      
                     </div>
-    
-                    <div class="servicios-apagados">
-                        <p>Servicios Apagados</p>
-                        <div class="servicio-content">
-                            <span>Docker</span>
-                            <span class="button-on">Encender</span>
-                        </div>
-    
-                        <div class="servicio-content">
-                            <span>Maria DB</span>
-                            <span class="button-on">Encender</span>
-                        </div>
-                    </div>
-    
+                            
                     <div class="agregar-nuevo-servicio-content">
-                        <span>Agregar Nuevo Servicio</span>
+                        <form action="#">
+                            <input type="text" name="servicio" id="servicio"/>
+                            <label for="registrar">Agregar Nuevo Servicio</label>
+                            <input type="submit" value="Registrar" id="registrar">
+                        </form>
+                        
                     </div>
+                    <div class="spinner" id="spinner">
+                        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                        <h4>Cargando Datos</h4>                    
+                    </div>
+                    <p class="mensaje-response">Servicio agregado, click para recargar la pagina</p>
                 </div>
                 
             </article>
@@ -69,5 +60,9 @@
     </main>
     <!-- Importamos el footer -->
     <%- include('./partials/footer.ejs') %> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/agregarServicio.js"></script>
+    <script src="/js/encenderServicio.js"></script>
+    <script src="/js/apagarServicio.js"></script>
 </body>
 </html>

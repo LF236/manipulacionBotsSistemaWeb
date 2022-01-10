@@ -18,20 +18,22 @@
             <% } %> 
 
             <% if(listaBots.length > 0) { %> 
-                <h2>Lista de bots registrados</h2>            
-                <article>
-                    <span class="icon icon-circle"></span>
-                    <div class="img-content">
-                        <img alt="imagen-bot" src="/img/bots/1.jpg"/>
-                    </div>
-                    
-                    <div class="bot-content">
-                        <p>Nombre del bot: <span>ADONIS</span></p>
-                        <p>Hostname: <span>adoBot</span></p>
-                        <p>Direccion IP: <span>192.168.0.123</span></p>
-                        <span class="boton-administrar"><a href="#">ADMINISTRAR</a></span>
-                    </div>                    
-                </article>
+                <h2>Lista de bots registrados</h2>
+                <% listaBots.forEach(bot => { %> 
+                    <article>
+                        <span class="icon icon-circle"></span>
+                        <div class="img-content">
+                            <img alt="imagen-bot" src="/img/bots/1.jpg"/>
+                        </div>
+                        
+                        <div class="bot-content">
+                            <p>Nombre del bot: <span><%= bot.nombreBot %> </span></p>
+                            <p>Hostname: <span><%= bot.hostname %> </span></p>
+                            <p>Direccion IP: <span><%= bot.direccionIP %> </span></p>
+                            <span class="boton-administrar"><a href=<%= `/infoBot/${bot.nombreBot}/${bot.hostname}` %> >ADMINISTRAR</a></span>
+                        </div>                    
+                    </article>
+                <% }) %>                 
             <% } %> 
             
 

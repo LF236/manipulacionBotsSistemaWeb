@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Importamos el head -->
+    <%- include('./partials/head.ejs'); %> 
+    <title>Editar Bot</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <!-- Importamos el header -->
+    <%- include('./partials/header.ejs'); %> 
+    <main>
+        <section class="fomulario-login">
+            <form method="POST" action=<%= `/editarBot/${infoBot.nombreBot}/${infoBot.hostname}/${infoBot.direccionIP}` %> >
+                <h2>Editar Bot</h2>
+                <h4 class="mensaje-error">Hola</h4>
+                <% if(primerError) { %> 
+                    <h4 class="mensaje-error-backend"> <%= primerError.msg %>  </h4>
+                <% } %> 
+
+                <label for="name">Nombre del bot</label>
+                <input type="text" placeholder="Nombre del bot" name="name" id="name" value="<%= infoBot && infoBot.nombreBot %>"/>
+
+                <label for="host">Hostname</label>
+                <input type="text" placeholder="Hostname" name="host" id="host" value="<%= infoBot && infoBot.hostname %>"/>
+
+                <label for="ip">Dirección IP</label>
+                <input type="text" placeholder="Dirección IP" name="ip" id="ip" value="<%= infoBot && infoBot.direccionIP %>"/>
+
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="password" placeholder="Password" value="" />
+
+                <div class="buttons">
+                    <label for="btn-send" class="btn-send">Enviar</label>
+                    <button type="submit" id="btn-send"></button>
+                </div>
+            </form>
+
+            <div class="formulario-login-img">
+                <img src="/img/bot-reg.png" alt="">
+            </div>
+        </section>
+    </main>
+    <!-- Importamos el footer -->
+    <%- include('./partials/footer.ejs') %>
+    <script src="/js/procesarRegistroBot.js"></script>
+</body>
+</html>

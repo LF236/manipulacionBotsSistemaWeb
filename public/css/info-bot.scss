@@ -17,7 +17,8 @@ $font-bold: "Montserrat", sans-serif;
     padding-top: 30px;
     .info-bot-content {
         width: 100%;
-        h2, p {
+        h2,
+        p {
             width: 100%;
             background-color: $blue;
             color: #fff;
@@ -44,7 +45,7 @@ $font-bold: "Montserrat", sans-serif;
                 font-family: $font-main;
                 color: #fff;
                 font-weight: 600;
-                transition: all .2s;
+                transition: all 0.2s;
                 border-radius: 10px;
                 &:hover {
                     color: #222;
@@ -53,10 +54,18 @@ $font-bold: "Montserrat", sans-serif;
 
             .editar {
                 background-color: $yellow;
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                }
             }
 
             .eliminar {
                 background-color: $red;
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                }
             }
         }
 
@@ -74,7 +83,7 @@ $font-bold: "Montserrat", sans-serif;
                 align-items: center;
                 padding: 5px;
                 padding-bottom: 5px;
-                
+
                 font-family: $font-main;
                 .button-off {
                     padding: 5px;
@@ -83,11 +92,34 @@ $font-bold: "Montserrat", sans-serif;
                     user-select: none;
                     cursor: pointer;
                     color: #fff;
-                    transition: all .2s;
+                    transition: all 0.2s;
                     &:hover {
                         color: #222;
                     }
                 }
+
+                .button-on {
+                    padding: 5px;
+                    border-radius: 5px;
+                    background-color: $green;
+                    user-select: none;
+                    cursor: pointer;
+                    color: #fff;
+                    transition: all 0.2s;
+                    &:hover {
+                        color: #222;
+                    }
+                }
+            }
+
+            .mensaje-encender-apagar {
+                width: 100%;
+                background-color: #fff;
+                color: $dark;
+                user-select: none;
+                font-weight: 600;
+                font-size: 0.8rem;
+                display: none;
             }
         }
 
@@ -105,7 +137,7 @@ $font-bold: "Montserrat", sans-serif;
                 align-items: center;
                 padding: 5px;
                 padding-bottom: 5px;
-                
+
                 font-family: $font-main;
                 .button-on {
                     padding: 5px;
@@ -114,7 +146,7 @@ $font-bold: "Montserrat", sans-serif;
                     user-select: none;
                     cursor: pointer;
                     color: #fff;
-                    transition: all .2s;
+                    transition: all 0.2s;
                     &:hover {
                         color: #222;
                     }
@@ -126,23 +158,42 @@ $font-bold: "Montserrat", sans-serif;
             margin-top: 20px;
             display: flex;
             justify-content: center;
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                label {
+                    display: block;
+                    padding: 5px;
+                    color: #fff;
+                    font-weight: 600;
+                    font-family: $font-main;
+                    background-color: $blue;
+                    border: 2px solid transparent;
+                    cursor: pointer;
+                    user-select: none;
+                    border-radius: 10px;
+                    transition: all 0.2s;
+                    margin-top: 10px;
+                    &:hover {
+                        border: 2px solid #222;
+                    }
+                }
 
-            span {
-                display: block;
-                padding: 10px;
-                color: #fff;
-                font-weight: 600;
-                font-family: $font-main;
-                background-color: $blue;
-                border: 2px solid transparent;
-                cursor: pointer;
-                user-select: none;
-                border-radius: 10px;
-                transition: all .2s;
-                &:hover {
-                    border: 2px solid #222;
+                input[type="submit"] {
+                    display: none;
                 }
             }
+        }
+        .mensaje-response {
+            width: 100%;
+            background-color: #fff;
+            color: $dark;
+            user-select: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: none;
         }
     }
 }
@@ -163,8 +214,79 @@ $font-bold: "Montserrat", sans-serif;
                     margin-top: 0;
                 }
             }
-
-            
         }
+    }
+}
+
+.spinner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: none;
+    h4 {
+        width: 100%;
+        text-align: center;
+        font-family: $font-main;
+        font-size: 0.8rem;
+    }
+}
+
+// Diseño SPinne
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: $blue;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+    background-color: $red;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+    background-color: $green;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+    background-color: $yellow;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
     }
 }

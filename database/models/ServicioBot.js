@@ -1,13 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
     const cols = {
-        id_servicio: {
-            type: DataTypes.UUID,
-            defaultValue: sequelize.UUID4,
-            allowNull: false,
-            references: {
-                model: 'Servicios',
-                key: 'id'
-            }
+        nombre: {
+            type: DataTypes.TEXT,
+            allowNull: false
         },
 
         id_bot: {
