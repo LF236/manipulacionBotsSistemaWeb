@@ -44,6 +44,6 @@ app.use(function (req, res, next) {
 });
 
 // Ponemos a escuchar el servidor
-https.createServer(httpsOptions, app).listen(puerto, () => {
+app.listen(puerto, () => {
     console.log(`El servidor esta listo en http://localhost:${puerto}`.rainbow);
 });

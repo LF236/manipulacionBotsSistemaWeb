@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
             const spiner = document.querySelector('#spinner');
             spiner.style.display = 'flex';
 
-            axios.get(`https://${ip.trim()}:5000/encenderServicio?servicioEncender=${nombreServicioEncender}&host=${hostname}`)
+            axios.get(`http://${ip.trim()}:5000/encenderServicio?servicioEncender=${nombreServicioEncender}&host=${hostname}`)
                 .then(response => {
                     // Quitamos el Spinner
                     spiner.style.display = 'none';
