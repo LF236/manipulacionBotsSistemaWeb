@@ -17,8 +17,8 @@ const mainControllers = {
         if (busquedaComando) {
             // Si el comando existe, enviamos una peticion al servidor central para que sea agregado a la DB
             console.log(process.env.IPSERVIDORCENTRAL);
-            console.log(`http://${process.env.IPSERVIDORCENTRAL}:3000/agregarServicioBot`);
-            axios.post(`http://${process.env.IPSERVIDORCENTRAL}:3000/agregarServicioBot`, {
+            console.log(`${process.env.PROTOCOLO}://${process.env.IPSERVIDORCENTRAL}:3000/agregarServicioBot`);
+            axios.post(`${process.env.PROTOCOLO}://${process.env.IPSERVIDORCENTRAL}:3000/agregarServicioBot`, {
                 data: {
                     "hostname": process.env.HOSTNAME,
                     "dirIp": ip.address(),
@@ -48,7 +48,7 @@ const mainControllers = {
             la informacion del bot
         */
         if (encenderSer) {
-            axios.post(`http://${process.env.IPSERVIDORCENTRAL}:3000/actualizarEstadoServicio`, {
+            axios.post(`${process.env.PROTOCOLO}://${process.env.IPSERVIDORCENTRAL}:3000/actualizarEstadoServicio`, {
                 data: {
                     "hostname": process.env.HOSTNAME,
                     "dirIp": ip.address(),
@@ -76,7 +76,7 @@ const mainControllers = {
                     información del BOT
                 */
                 if (apagarSer) {
-                    axios.post(`http://${process.env.IPSERVIDORCENTRAL}:3000/actualizarEstadoServicioApagado`, {
+                    axios.post(`${process.env.PROTOCOLO}://${process.env.IPSERVIDORCENTRAL}:3000/actualizarEstadoServicioApagado`, {
                         data: {
                             "hostname": process.env.HOSTNAME,
                             "dirIp": ip.address(),
